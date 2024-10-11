@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import { type Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config: Config = {
@@ -17,6 +17,15 @@ const config: Config = {
       }
     },
     extend: {
+      keyframes: {
+        wave: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' }
+        }
+      },
+      animation: {
+        wave: 'wave 2s ease-in-out infinite'
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         serif: ['var(--font-serif)', ...fontFamily.serif],
@@ -74,4 +83,5 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')]
 }
+
 export default config

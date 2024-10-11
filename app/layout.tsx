@@ -8,6 +8,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 import './globals.css'
+import Chatbot from '@/components/chatbot'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className='grow'>{children}</main>
+          <Chatbot />
           <Footer />
         </Providers>
       </body>

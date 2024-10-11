@@ -23,16 +23,22 @@ export default function Header() {
             <ul className='flex flex-col gap-3 text-sm'>
               <li className='font-sans text-2xl'>
                 <SheetClose asChild>
-                  <Link href='/'>next</Link>
+                  <Link href='/' className='font-serif'>
+                    Sneakers
+                  </Link>
                 </SheetClose>
               </li>
             </ul>
           </SheetContent>
         </Sheet>
 
+        <Link className='font-serif text-lg font-medium' href='/'>
+          Sneakers
+        </Link>
+
         <ul className='hidden items-center gap-14 text-sm font-medium sm:flex'>
-          <li className='font-serif text-lg font-bold'>
-            <Link href='/'>next</Link>
+          <li>
+            <Link href='/'>Home</Link>
           </li>
         </ul>
 
