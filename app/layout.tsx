@@ -9,6 +9,8 @@ import Footer from '@/components/footer'
 
 import './globals.css'
 import Chatbot from '@/components/chatbot'
+import { ChatProvider } from '@/context/Chat-context'
+import { Toaster } from '@/components/ui/toaster'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -27,8 +29,26 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn Template',
-  description: 'NextJs template with shadcn/ui'
+  title: 'Sneaker - Step Up Your Style with Premium Sneakers',
+  description:
+    'Explore a wide range of premium sneakers from top brands like Nike, Adidas, Puma, and more. Shop the latest collections for men, women, and kids. Find exclusive deals, new arrivals, and limited-edition sneakers. Fast delivery and secure checkout.',
+  icons: {
+    icon: '/favicon.png'
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://sneaker.com',
+    title: 'Sneaker - Step Up Your Style with Premium Sneakers',
+    description:
+      'Explore a wide range of premium sneakers from top brands like Nike, Adidas, Puma, and more. Shop the latest collections for men, women, and kids. Find exclusive deals, new arrivals, and limited-edition sneakers. Fast delivery and secure checkout.',
+    images: [
+      {
+        url: '/open-graph.jpg',
+        width: 1200,
+        height: 630
+      }
+    ]
+  }
 }
 
 export default function RootLayout({
@@ -38,22 +58,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='scroll-smooth' suppressHydrationWarning>
-      <body
-        className={cn(
-          'flex min-h-screen flex-col',
-          geistSans.variable,
-          geistMono.variable,
-          inter.variable,
-          playfair.variable
-        )}
-      >
-        <Providers>
-          <Header />
-          <main className='grow'>{children}</main>
-          <Chatbot />
-          <Footer />
-        </Providers>
-      </body>
+      <ChatProvider>
+        <body
+          className={cn(
+            'flex min-h-screen flex-col',
+            geistSans.variable,
+            geistMono.variable,
+            inter.variable,
+            playfair.variable
+          )}
+        >
+          <Providers>
+            <Header />
+            <main className='grow'>{children}</main>
+            <Chatbot />
+            <Footer />
+            <Toaster />
+          </Providers>
+        </body>
+      </ChatProvider>
     </html>
   )
 }

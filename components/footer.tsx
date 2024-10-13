@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className='py-4'>
       <div className='container flex flex-col items-center justify-between gap-x-3 gap-y-1 text-center text-sm text-muted-foreground sm:flex-row'>
         <p>
-          Next shadcn &copy;{new Date().getFullYear()}. All rights reserved.
+          Sneakers Store &copy;{new Date().getFullYear()}. All rights reserved.
         </p>
         <p className='text-xs'>
           Developed by{' '}
@@ -13,9 +13,9 @@ export default function Footer() {
             target='_blank'
             rel='noopener noreferrer'
             className='text-primary transition-colors hover:text-accent-foreground'
-            href='https://www.hamedbahram.io/'
+            href='https://www.ywalum.com/'
           >
-            Studio H
+            Yasin Walum
           </Link>
         </p>
       </div>
